@@ -1,15 +1,16 @@
 <?php
 
-$names =
+$task = 
 [
-	'Jeff',
-	'John',
-	'Mary'
+	'title' 		=> 'Finish homework',
+	'due_date' 		=> 'today',
+	'assigned_to' 	=> 'Ryan',
+	'completed' 	=> false
 ];
 
-foreach ($names as $name)
+foreach ($task as $heading => $value)
 {
-	echo '<li>' . $name . ', ' . '</li>';
+	echo ucwords("$heading : $value </br>");
 }
 
 require 'index.view.php';
