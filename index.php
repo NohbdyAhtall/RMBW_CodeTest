@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>RM_BW_Form</title>
-	<style>
-	header {
-		background: #e3e3e3;
-		padding: 2em;
-		text-align: center;
-	}
-	</style>
+<?php
 
-</head>
-<body>	
-	<header>
-		<h1>Hello, World</h1>
-	</header>
-</body>
-</html>
+$names =
+[
+	'Jeff',
+	'John',
+	'Mary'
+];
+
+foreach ($names as $name)
+{
+	echo '<li>' . $name . ', ' . '</li>';
+}
+
+require 'index.view.php';
