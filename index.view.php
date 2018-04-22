@@ -18,7 +18,10 @@
 	<header>
 		<h1>
 			<?=
-				$names[$_GET['num']];
+				foreach ($task as $heading => $value)
+				{
+					echo ucwords("$heading : $value </br>");
+				}
 			?>
 		</h1>
 	</header>

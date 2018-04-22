@@ -11,6 +11,31 @@
 |
 */
 
+// --- Form --- //
 Route::get('/', function () {
-    return view('welcome');
+    return view('form');
+});
+
+// --- Admin Panel --- //
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+// --- Default Laravel Page + Modifications --- //
+Route::get('/home', function () {
+    return view('home');
+});
+
+
+// --- Welcome (For Learning / Practice) --- //
+Route::get('/welcome', function () {
+
+	$tasks = 
+	[
+		'Drink energy drink',
+		'Learn some Laravel',
+		'Work on the code test'
+	];
+
+    return view('welcome', compact('tasks'));
 });

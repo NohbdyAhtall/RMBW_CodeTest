@@ -8,9 +8,6 @@ $task =
 	'completed' 	=> false
 ];
 
-foreach ($task as $heading => $value)
-{
-	echo ucwords("$heading : $value </br>");
-}
+
 
 require 'index.view.php';
