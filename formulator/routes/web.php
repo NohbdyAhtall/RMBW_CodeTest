@@ -11,7 +11,22 @@
 |
 */
 
-use App\Task;
+
+// --- Welcome (For Learning / Practice) --- //
+Route::get('/laracast', 'PostsController@index');
+Route::get('/laracast/posts/{posts}', 'PostsController@show');
+
+// controller => PostsController
+
+// Eloquent model => Post
+
+// migration => create_posts_table
+//Route::get('/tasks/{task}',	'TasksController@show');
+
+
+
+
+
 
 // --- Form --- //
 Route::get('/', 'FormulatorController@formulator');
@@ -23,7 +38,3 @@ Route::get('/admin', 'FormulatorController@adminPanel');
 Route::get('/home', function () {
     return view('home');
 });
-
-// --- Welcome (For Learning / Practice) --- //
-Route::get('/tasks', 'TasksController@index');
-Route::get('/tasks/{task}',	'TasksController@show');
