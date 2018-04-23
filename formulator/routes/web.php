@@ -28,13 +28,19 @@ Route::get('/laracast/posts/{posts}', 'PostsController@show');
 
 
 
-// --- Form --- //
-Route::get('/', 'FormulatorController@formulator');
+// --- Form --- // --------- --------- --------- // Form --- //
+Route::get(	'/',
+			'PostsController@index');
 
-// --- Admin Panel --- //
-Route::get('/admin', 'FormulatorController@adminPanel');
+Route::get(	'/posts/create',
+			'PostsController@create');
 
-// --- Default Laravel Page + Modifications --- //
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get( '/laracast/posts/{posts}',
+			'PostsController@show');
+
+Route::post( '/posts',
+			 'PostsController@store');
+
+// --- Admin Panel --- // --------- --------- -- // Admin Panel --- //
+Route::get( '/admin',
+			'PostsController@adminPanel');
