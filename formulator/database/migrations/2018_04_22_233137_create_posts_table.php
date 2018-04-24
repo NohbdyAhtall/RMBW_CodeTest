@@ -15,22 +15,22 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('custFirstName'),
-            $table->text('custLastName'),
-            $table->text('custAddress1'),
-            $table->text('custAddress2'),
-            $table->text('custCity'),
-            $table->text('custState'),
-            $table->integer('custZip'),
-            $table->integer('custPhone'),
-            $table->email('custEmail'),
-            $table->text('compName'),
-            $table->text('compAddress'),
-            $table->text('compCity'),
-            $table->text('compState'),
-            $table->integer('compZip'),
-            $table->integer('compPhone'),
-            $table->blob('compInvoicePDF'),
+            $table->text('custFirstName');
+            $table->text('custLastName');
+            $table->text('custAddress1');
+            $table->text('custAddress2');
+            $table->text('custCity');
+            $table->text('custState');
+            $table->integer('custZip');
+            $table->integer('custPhone');
+            $table->text('custEmail');
+            $table->text('compName');
+            $table->text('compAddress');
+            $table->text('compCity');
+            $table->text('compState');
+            $table->integer('compZip');
+            $table->integer('compPhone');
+            $table->binary('compInvoicePDF');
             $table->timestamps();
         });
     }

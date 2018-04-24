@@ -11,24 +11,7 @@
 |
 */
 
-
-// --- Welcome (For Learning / Practice) --- //
-Route::get('/laracast', 'PostsController@index');
-Route::get('/laracast/posts/{posts}', 'PostsController@show');
-
-// controller => PostsController
-
-// Eloquent model => Post
-
-// migration => create_posts_table
-//Route::get('/tasks/{task}',	'TasksController@show');
-
-
-
-
-
-
-// --- Form --- // --------- --------- --------- // Form --- //
+// --- Form --- //
 Route::get(	'/',
 			'PostsController@index');
 
@@ -41,6 +24,9 @@ Route::get( '/laracast/posts/{posts}',
 Route::post( '/posts',
 			 'PostsController@store');
 
-// --- Admin Panel --- // --------- --------- -- // Admin Panel --- //
+// --- Admin Panel --- //
 Route::get( '/admin',
 			'PostsController@adminPanel');
+
+// --- Auth Route --- //
+Auth::routes();
