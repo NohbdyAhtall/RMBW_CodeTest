@@ -22,14 +22,14 @@ class CreatePostsTable extends Migration
             $table->text('custCity');
             $table->text('custState');
             $table->integer('custZip');
-            $table->integer('custPhone');
+            $table->bigInteger('custPhone');
             $table->text('custEmail');
             $table->text('compName');
             $table->text('compAddress');
             $table->text('compCity');
             $table->text('compState');
             $table->integer('compZip');
-            $table->integer('compPhone');
+            $table->bigInteger('compPhone');
             $table->binary('compInvoicePDF');
             $table->timestamps();
         });

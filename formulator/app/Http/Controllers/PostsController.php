@@ -35,7 +35,7 @@ class PostsController extends Controller
     		'custFirstName' => 'required',
     		'custLastName' 	=> 'required',
     		'custAddress1' 	=> 'required',
-    		'custAddress2' 	=> 'required',
+    		// custAddress2 is optional
     		'custCity' 		=> 'required',
     		'custState' 	=> 'required',
     		'custZip' 		=> 'required|regex:/\b\d{5}\b/',
@@ -47,7 +47,7 @@ class PostsController extends Controller
     		'compState' 	=> 'required',
     		'compZip' 		=> 'required|regex:/\b\d{5}\b/',
     		'compPhone' 	=> 'required|numeric|phone',
-    		'compInvoicePDF' => 'required'
+    		'compInvoicePDF' => 'required' // '|mimes:pdf' seemed faulty, didn't work
     	]);
 
     	Post::create([
@@ -73,11 +73,5 @@ class PostsController extends Controller
 
     	// Redirect to form page
     	return redirect('/');
-    }
-
-    public function adminPanel()
-    {
-
-    	return view('admin');
     }
 }

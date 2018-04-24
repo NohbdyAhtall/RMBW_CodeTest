@@ -18,7 +18,7 @@ Route::get(	'/',
 Route::get(	'/posts/create',
 			'PostsController@create');
 
-Route::get( '/laracast/posts/{posts}',
+Route::get( '/posts/{posts}',
 			'PostsController@show');
 
 Route::post( '/posts',
@@ -26,7 +26,7 @@ Route::post( '/posts',
 
 // --- Admin Panel --- //
 Route::get( '/admin',
-			'PostsController@adminPanel');
+			'AdminController@index');
 
 // --- Auth Route --- //
 Auth::routes();

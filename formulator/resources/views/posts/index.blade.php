@@ -106,10 +106,28 @@
   </div>
 
   <div class="form-group">
-    <label for="compInvoicePDF">Invoice File</label>
-    <!-- Validation  -->
-    <input type="file" id="compInvoicePDF" name="compInvoicePDF" accept=".pdf" required>
+    <label for="compInvoicePDF">Invoice File:</label>
+    <input type="file" id="compInvoicePDF" name="compInvoicePDF" required>
     <p class="help-block"><i>Note: Only PDF files are allowed.</i></p>
+  </div>
+
+  <!-- Captcha -->
+  <div class="form-group row">
+    <label for="captcha">Captcha:</label>
+    <div class ="col-md-6">
+
+      {!! NoCaptcha::renderJs() !!}
+      {!! NoCaptcha::display() !!}
+
+      @if ($errors->has('g-recaptcha-response'))
+        <span class="invalid-feedback" style="display: block;">
+          <strong>
+            {{ $errors->first('g-recaptcha-response') }}
+          </strong>
+        </span>
+      @endif
+
+    </div>
   </div>
 
   <!-- Form Submission -->
