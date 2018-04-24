@@ -8,6 +8,16 @@
   <!-- Customer Information -->
   <hr>
 
+  @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+  @endif
+
   <label for="customerInfo"><h3>Customer Information</h3></label>
   <div class="form-group">
     <input type="text" class="form-control" id="custFirstName" placeholder="First Name" name="custFirstName" required>

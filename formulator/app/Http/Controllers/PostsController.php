@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+
 class PostsController extends Controller
 {
     public function index()
-    {
+    {   	
     	return view ('posts.index');
     }
     public function show()
@@ -36,15 +38,15 @@ class PostsController extends Controller
     		'custAddress2' 	=> 'required',
     		'custCity' 		=> 'required',
     		'custState' 	=> 'required',
-    		'custZip' 		=> 'required',
-    		'custPhone' 	=> 'required',
+    		'custZip' 		=> 'required|regex:/\b\d{5}\b/',
+    		'custPhone' 	=> 'required|numeric|phone',
     		'custEmail' 	=> 'required',
     		'compName' 		=> 'required',
     		'compAddress' 	=> 'required',
     		'compCity' 		=> 'required',
     		'compState' 	=> 'required',
-    		'compZip' 		=> 'required',
-    		'compPhone' 	=> 'required',
+    		'compZip' 		=> 'required|regex:/\b\d{5}\b/',
+    		'compPhone' 	=> 'required|numeric|phone',
     		'compInvoicePDF' => 'required'
     	]);
 
@@ -75,6 +77,7 @@ class PostsController extends Controller
 
     public function adminPanel()
     {
+
     	return view('admin');
     }
 }

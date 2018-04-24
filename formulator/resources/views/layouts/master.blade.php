@@ -25,8 +25,10 @@
     </header>
 
     <div class ="container-fluid">
+
       @yield('form')
       @yield('adminLink')
+
     </div>
 
     @include('layouts.footer')
